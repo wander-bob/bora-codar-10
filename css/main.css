@@ -2,6 +2,7 @@
   font-size: 62.5%;
   --bg-card: #6D67D0;
   --bg-card-light: rgba(102, 96, 200, 0.6);
+  --font-white: #FFF;
   --font-light: #DAD8F7;
   --font-medium: #C2BFF4;
   --font-variant-green: #87EBCD;
@@ -14,4 +15,126 @@
   font-size: 1.6rem;
   font-family: 'Lato', sans-serif;
   color: var(--font-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {}
+
+main {
+  min-height: 100vh;
+  background: url('../assets/background.png') no-repeat center/cover;
+  display: grid;
+  place-content: center;
+}
+
+section {
+  border-radius: 10px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+}
+
+.temperature-now {
+  background: url('../assets/temp-now.jpg');
+  height: 48rem;
+  width: 48rem;
+  position: relative;
+
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.temperature-now::before {
+  content: "";
+  display: block;
+  width: 17.6rem;
+  height: 17.6rem;
+  background: url('../assets/clouds.svg') no-repeat;
+  position: absolute;
+  top: -5.6rem;
+  left: -5.6rem
+}
+
+.temperature-now .location {
+  justify-self: end;
+
+  padding: 3.2rem 3.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+
+}
+
+.temperature-now .location strong {
+  color: var(--font-medium);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.temperature-now .temp {
+  margin: 6rem;
+
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.temperature-now .temp .number {
+  text-align: center;
+
+  color: var(--font-white);
+  font-size: 8.8rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.temperature-now .temp .number .min-max {
+  font-size: 2rem;
+}
+
+.temperature-now .temp .number .min-max span {
+  color: var(--font-medium);
+}
+
+.temperature-now .temp .celcius {
+  font-size: 2.4rem;
+  color: var(--font-light);
+  margin-top: 1.5rem;
+}
+
+.temperature-now .statistics {
+  padding: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.temperature-now .statistics .stats {
+  flex: 1;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.6rem;
+  background: rgba(102, 96, 200, 0.60);
+
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.temperature-now .statistics .stats .info {
+  color: #E7E6FB;
+}
+
+.temperature-now .statistics .stats .info h5 span,
+.temperature-now .statistics .stats .info p {
+  font-size: 1.2rem;
+}
+
+.temperature-now .statistics .stats .info h5 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
 }
