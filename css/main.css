@@ -5,7 +5,10 @@
   --font-light: #DAD8F7;
   --font-medium: #C2BFF4;
   --font-variant-green: #87EBCD;
+  --pos-x: 50;
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +17,7 @@
   font-family: 'Lato', sans-serif;
   color: var(--font-light);
 }
+
 body {
   background-image: url('../assets//background.svg');
   background-position: center;
@@ -21,18 +25,21 @@ body {
   background-repeat: no-repeat;
   backdrop-filter: blur(1rem);
 }
-main { 
+
+main {
   min-height: 100vh;
   display: grid;
   place-content: center;
   gap: 2.4rem;
 }
-section { 
+
+section {
   background-color: var(--bg-card);
   backdrop-filter: blur(1rem);
   border-radius: 1rem;
 }
-.temp-now{
+
+.temp-now {
   position: relative;
   background: url('../assets/temp-now.jpg') no-repeat center;
   width: 48rem;
@@ -40,7 +47,8 @@ section {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
 }
-.temp-now::before{
+
+.temp-now::before {
   position: absolute;
   content: '';
   width: 17.6rem;
@@ -50,33 +58,40 @@ section {
   top: -5.6rem;
   left: -5.6rem;
 }
+
 .temp-card {
-  margin-top:15%;
+  margin-top: 15%;
   justify-self: center;
   display: grid;
 }
-.temp-card strong { 
+
+.temp-card strong {
   font-size: 8.8rem;
   color: #fff;
 }
+
 .temp-card strong sup {
   display: inline-block;
   transform: translateY(-1.2rem);
   font-size: 2.4rem;
 }
+
 .temp-min-max {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
 }
+
 .temp-min-max span {
   font-size: 2rem;
   font-weight: 700;
   color: #FFF;
 }
+
 .temp-min-max span:last-child {
   color: var(--font-medium);
 }
+
 .location {
   justify-self: end;
   padding: 3.2rem 3.2rem 0;
@@ -84,17 +99,20 @@ section {
   align-items: center;
   gap: 0.4rem;
 }
+
 .location strong {
   font-size: 1.4rem;
   color: var(--font-medium);
 }
+
 .statistics {
   margin-bottom: 1.2rem;
   place-self: center;
   display: flex;
   gap: 0.8rem;
 }
-.info{
+
+.info {
   height: 6rem;
   width: 14rem;
   background: var(--bg-card-light);
@@ -103,18 +121,25 @@ section {
   display: flex;
   gap: 1.2rem;
 }
-.info-content span, .info-content strong {
+
+.info-content span,
+.info-content strong {
   color: #E7E6FB;
 }
+
 .info-content span {
   font-size: 1.2rem;
 }
-.info-content strong{ 
+
+.info-content strong {
   font-size: 1.8rem;
-}.info-content strong span{ 
+}
+
+.info-content strong span {
   font-size: 1.4rem;
   margin-left: .4rem;
 }
+
 .air-quality {
   font-weight: bold;
   text-align: center;
@@ -122,37 +147,113 @@ section {
 }
 
 h2.title {
-  margin-top: 3.2rem;  
+  margin-top: 3.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
   font-size: 1.6rem;
 }
+
 .air-quality .good {
   margin-top: 3.2rem;
   font-size: 1.8rem;
   color: var(--font-variant-green);
 }
-.air-quality > p.number {
+
+.air-quality>p.number {
   font-size: 4rem;
   color: #E7E6FB;
 }
-.air-quality .info {
+
+.air-quality .air-quality-details {
   width: 100%;
   margin-top: 3.2rem;
   display: flex;
   align-items: center;
   padding: 0 1.6rem 1.6rem;
 }
-.air-quality .info .number {
+
+.air-quality .air-quality-details .number {
   flex: 1;
 }
-.info .number p { 
+
+.air-quality-details .number p {
   font-size: 1.4rem;
   color: var(--font-variant-green);
 }
-.info .number small{ 
+
+.air-quality-details .number small {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.sun-chart-wrapper {
+  margin-top: 4rem;
+  height: 11rem;
+}
+
+.sun-chart {
+  position: relative;
+  width: 21.6rem;
+  height: 21.6rem;
+  margin: auto;
+}
+
+.sun-chart::before {
+  content: '';
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  background: #F6C833;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -0.6rem;
+  transform: rotate(calc(1deg * ((100 - var(--pos-x)) /-100) * 180)) translate(10.8rem);
+}
+
+.chart {
+  width: 21.6rem;
+  height: 10.8rem;
+  overflow: hidden;
+}
+
+.chart::before {
+  content: '';
+  width: 21.6rem;
+  height: 21.6rem;
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(251, 219, 96, 0.20) 0%, rgba(251, 219, 96, 0.00) 101.89%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+  rotate: calc(1.8deg * var(--pos-x));
+}
+
+.chart img {
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+
+time.now {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.time {
+  font-size: 1.2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 27.6rem;
+  margin: 0.8rem auto 0;
+  padding: 0 1.6rem 1.6rem;
 }

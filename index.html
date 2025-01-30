@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <title>Página de clima</title>
 </head>
+
 <body>
   <main>
     <section class="temp-now">
@@ -56,7 +60,7 @@
       </h2>
       <p class="good">Boa</p>
       <p class="number">21</p>
-      <div class="info">
+      <div class="air-quality-details">
         <div class="number">
           <p>12.9</p>
           <small>PM2.5</small>
@@ -83,6 +87,25 @@
         </div>
       </div>
     </section>
+    <section class="sun-time">
+      <h2 class="title">
+        <img src="./assets/sun.svg" alt="um ícone de um sol com um relógio desenhado">
+        horário do sol
+      </h2>
+      <div class="sun-chart-wrapper">
+        <div class="sun-chart">
+          <div class="chart">
+            <img src="./assets/chart.svg" alt="gráfico tracejado em formato de elipse">
+          </div>
+          <time class="now">15:02</time>
+        </div>
+      </div>
+      <div class="time">
+        <time class="sunrise">06:00</time>
+        <time class="sunset">18:52</time>
+      </div>
+    </section>
   </main>
 </body>
+
 </html>
