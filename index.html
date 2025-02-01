@@ -10,57 +10,59 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
-  <title>Página de clima</title>
+  <title>#BoraCodar 10 - Página de clima</title>
 </head>
 
 <body>
   <main>
-    <section class="temp-now">
+    <section class="temperature-now">
       <div class="location">
-        <img src="./assets/pin.svg" alt="icone de localização">
+        <img src="./assets/pin.svg" alt="ícone de localização">
         <strong>Rio do Sul, SC</strong>
       </div>
-      <div class="temp-card">
-        <div class="current-temp">
-          <strong>18<sup>°C</sup></strong>
-          <div class="temp-min-max">
-            <span>22°</span>
+      <div class="temp">
+        <div class="number">
+          18
+          <div class="min-max">
+            22°
             <span>16°</span>
           </div>
         </div>
+        <div class="celcius">ºc</div>
       </div>
       <div class="statistics">
-        <div class="info">
-          <img src="./assets/wind.svg" alt="icone de ventania">
-          <div class="info-content">
-            <span>Vento</span>
-            <strong>17<span>km/h</span></strong>
+        <div class="stats">
+          <img src="./assets/wind.svg" alt="ícone de vento">
+          <div class="info">
+            <p>Vento</p>
+            <h5>17 <span>km/h</span></h5>
           </div>
         </div>
-        <div class="info">
-          <img src="./assets/humidity.svg" alt="icone sobre humidade">
-          <div class="info-content">
-            <span>Umidade</span>
-            <strong>31<span>%</span></strong>
+        <div class="stats">
+          <img src="./assets/humidity.svg" alt="ícone de umidade">
+          <div class="info">
+            <p>Umidade</p>
+            <h5>31 <span>%</span></h5>
           </div>
         </div>
-        <div class="info">
-          <img src="./assets/rain.svg" alt="icone sobre chuva">
-          <div class="info-content">
-            <span>Chuva</span>
-            <strong>10<span>%</span></strong>
+        <div class="stats">
+          <img src="./assets/rain.svg" alt="ícone de chuva">
+          <div class="info">
+            <p>Chuva</p>
+            <h5>10 <span>%</span></h5>
           </div>
         </div>
       </div>
     </section>
     <section class="air-quality">
       <h2 class="title">
-        <img src="./assets/leaf.svg" alt="icone de uma folha de arvore">
+        <img src="./assets/leaf.svg" alt="ícone de folha">
         Qualidade do ar
       </h2>
+
       <p class="good">Boa</p>
-      <p class="number">21</p>
-      <div class="air-quality-details">
+      <div class="number">21</div>
+      <div class="info">
         <div class="number">
           <p>12.9</p>
           <small>PM2.5</small>
@@ -71,7 +73,7 @@
         </div>
         <div class="number">
           <p>2.1</p>
-          <small>SO₂</small>
+          <small>sO₂</small>
         </div>
         <div class="number">
           <p>1.4</p>
@@ -89,20 +91,47 @@
     </section>
     <section class="sun-time">
       <h2 class="title">
-        <img src="./assets/sun.svg" alt="um ícone de um sol com um relógio desenhado">
-        horário do sol
+        <img src="./assets/sun-time.svg" alt="icone horário do sul">
+        Horário do sol
       </h2>
       <div class="sun-chart-wrapper">
         <div class="sun-chart">
           <div class="chart">
-            <img src="./assets/chart.svg" alt="gráfico tracejado em formato de elipse">
+            <img src="./assets/sun-chart.svg" alt="imagem de um gráfico com um semicírculo com traços">
           </div>
-          <time class="now">15:02</time>
+          <time class="now">17:48</time>
         </div>
       </div>
       <div class="time">
         <time class="sunrise">06:00</time>
         <time class="sunset">18:52</time>
+      </div>
+    </section>
+    <section class="week-weather">
+      <div class="day">
+        <h4 class="title">Amanhã</h4>
+        <img src="./assets/cloudly-weather.svg" alt="clima nublado">
+        <p class="maxmin">21º <span>16º</span></p>
+      </div>
+      <div class="day">
+        <h4 class="title">Sexta</h4>
+        <img src="./assets/sunny-weather.svg" alt="clima ensolarado">
+        <p class="maxmin">28º <span>20º</span></p>
+      </div>
+      <div class="day">
+        <h4 class="title">Sábado</h4>
+        <img src="./assets/rainy-weather.svg" alt="clima chuvoso">
+        <p class="maxmin">25º <span>21º</span></p>
+      </div>
+      <div class="day">
+        <h4 class="title">Domingo</h4>
+        <img src="./assets/storm-weather.svg" alt="clima tempestuoso">
+        <p class="maxmin">20º <span>14º</span></p>
+      </div>
+      <div class="day">
+        <h4 class="title">Segunda</h4>
+        <img src="./assets/partially-cloudly-weather.svg" alt="clima chuvoso">
+        <p class="maxmin">24º <span>18º</span></p>
       </div>
     </section>
   </main>
