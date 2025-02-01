@@ -2,7 +2,6 @@
   font-size: 62.5%;
   --bg-card: #6D67D0;
   --bg-card-light: rgba(102, 96, 200, 0.6);
-  --font-white: #FFF;
   --font-light: #DAD8F7;
   --font-medium: #C2BFF4;
   --font-variant-green: #87EBCD;
@@ -82,7 +81,7 @@ section {
 .temperature-now .temp .number {
   text-align: center;
 
-  color: var(--font-white);
+  color: #FFF;
   font-size: 8.8rem;
 
   display: flex;
@@ -231,7 +230,7 @@ h2.title {
 
   display: block;
   background: linear-gradient(180deg, rgba(251, 219, 96, 0.20) 0%, rgba(251, 219, 96, 0.00) 101.89%);
-  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  --mask: linear-gradient(0deg, #FFF 50%, transparent 0%);
   mask: var(--mask);
   -webkit-mask: var(--mask);
 
@@ -251,18 +250,45 @@ time.now {
   top: 50%;
   left: 50%;
   transform: translate(-25%);
-  color: #fff;
+  color: #FFF;
   font-size: 1.4rem;
   font-weight: 700;
 }
 
 .time {
   font-size: 1.2rem;
-  color: #fff;
+  color: #FFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 27.6rem;
   padding: 0 1.6 1.6;
   margin: 0.8rem auto 0;
+}
+
+.week-weather {
+  padding: 4rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.day {
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  gap: 1.6rem;
+}
+
+h4.title {
+  font-size: 1.4rem;
+  color: var(--font-light);
+}
+
+.day .maxmin {
+  font-weight: 700;
+  color: #FFF;
+}
+
+.day .maxmin span {
+  color: var(--font-medium);
 }
