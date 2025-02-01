@@ -34,7 +34,8 @@ section {
 }
 
 .temperature-now {
-  background: url('../assets/temp-now.jpg');
+  background: url('../assets/temp-now.jpg') no-repeat;
+  background-size: cover;
   position: relative;
 
   display: grid;
@@ -291,4 +292,19 @@ h4.title {
 
 .day .maxmin span {
   color: var(--font-medium);
+}
+
+@media (min-width: 1200px) {
+  main {
+    grid-template-columns: 48rem 27.7rem 27.7rem;
+    grid-template-rows: 24.4rem 21.2;
+  }
+
+  .temperature-now {
+    grid-row: 1/4;
+  }
+
+  .week-weather {
+    grid-column: 2/4;
+  }
 }
