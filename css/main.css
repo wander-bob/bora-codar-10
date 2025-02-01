@@ -186,3 +186,83 @@ h2.title {
   color: #E7E6FB;
   font-size: 1.2rem;
 }
+
+.sun-chart-wrapper {
+  margin-top: 4rem;
+  height: 11rem;
+}
+
+.sun-chart {
+  --pos-x: 80;
+  margin: auto;
+  position: relative;
+
+  width: 21.6rem;
+  height: 21.6rem;
+  position: relative;
+}
+
+.sun-chart::before {
+  position: absolute;
+  content: '';
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #F6C833;
+  top: 50%;
+  left: 50%;
+  margin: -0.6rem;
+
+  transform: rotate(calc(1deg * (((100 - var(--pos-x))/-100)*180))) translate(10.6rem);
+}
+
+.chart {
+  width: 21.6rem;
+  height: 10.8rem;
+  overflow: hidden;
+}
+
+.chart::before {
+  content: '';
+  width: 21rem;
+  height: 21rem;
+
+  border-radius: 50%;
+
+  display: block;
+  background: linear-gradient(180deg, rgba(251, 219, 96, 0.20) 0%, rgba(251, 219, 96, 0.00) 101.89%);
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+
+  rotate: calc(1.8deg * var(--pos-x));
+
+}
+
+.chart img {
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+
+time.now {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.time {
+  font-size: 1.2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 27.6rem;
+  padding: 0 1.6 1.6;
+  margin: 0.8rem auto 0;
+}
