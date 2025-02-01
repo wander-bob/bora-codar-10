@@ -21,9 +21,11 @@
 
 main {
   min-height: 100vh;
+  padding: 6.4rem;
   background: url('../assets/background.png') no-repeat center/cover;
   display: grid;
   place-content: center;
+  gap: 2.4rem;
 }
 
 section {
@@ -34,8 +36,6 @@ section {
 
 .temperature-now {
   background: url('../assets/temp-now.jpg');
-  height: 48rem;
-  width: 48rem;
   position: relative;
 
   display: grid;
@@ -135,4 +135,54 @@ section {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
+}
+
+.air-quality {
+  font-weight: bold;
+
+  text-align: center;
+  display: grid;
+}
+
+h2.title {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3.2rem;
+}
+
+.air-quality .good {
+  margin-top: 3.2rem;
+  font-size: 1.8rem;
+  color: var(--font-variant-green);
+}
+
+.air-quality .number {
+  margin-top: 0.4rem;
+  font-size: 4rem;
+  color: #E7E6FB;
+}
+
+.air-quality .info {
+  display: flex;
+  margin-top: 3.2rem;
+  padding: 0 1.6rem 1.6rem;
+
+  font-size: 1.4rem;
+}
+
+.air-quality .info .number {
+  flex: 1;
+}
+
+.air-quality .info p {
+  color: var(--font-variant-green);
+  font-weight: 700;
+}
+
+.air-quality .info small {
+  color: #E7E6FB;
+  font-size: 1.2rem;
 }
